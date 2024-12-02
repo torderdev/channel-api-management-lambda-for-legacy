@@ -4,9 +4,9 @@ export async function handler(event) {
 
     // 라우팅 설정
     const apiRoutes = {
-      '/api/getConfig': 'https://api.middleware.torder.tech/management/v1/legacy/api/getConfig',
-      '/getConfig': 'https://api.middleware.torder.tech/management/v1/legacy/api/getConfig', // AWS API Gateway 전용
-      '/api/isMiddlewareApproved': 'https://api.middleware.torder.tech/management/v1/legacy/api/isMiddlewareApproved',
+      '/api/getConfig': process.env["MGMT_GET_CONFIG_URL"],
+      '/getConfig': process.env["MGMT_GET_CONFIG_URL"], // AWS API Gateway 전용
+      '/api/isMiddlewareApproved': process.env["MGMT_IS_MIDDLEWARE_APPROVED_URL"],
     };
 
     // 유효한 경로 및 HTTP 메소드 확인
